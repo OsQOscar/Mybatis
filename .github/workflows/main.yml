@@ -1,4 +1,4 @@
-name: windowsservervps
+name: mybatis
 
 on: workflow_dispatch
 
