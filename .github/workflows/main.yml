@@ -18,8 +18,6 @@ jobs:
       run: tzutil /s "China Standard Time"
     - name: set region in china
       run: Set-WinSystemLocale zh-cn
-    - name: set language in chinese
-      run: Set-WinUserLanguageList zh-cn
     - name: show seconds in system clock
       run: reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
