@@ -27,7 +27,7 @@ jobs:
     - name: start taskmgr.exe
       run: start taskmgr.exe
     - name: set systemlocaleinchinapowershell
-      run: .\setlocaleinchina.ps1
+      run: Set-WinSystemLocale zh-cn
       shell: powershell
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 5
