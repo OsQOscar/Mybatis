@@ -21,7 +21,7 @@ jobs:
     - name: show seconds in system clock
       run: reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1
     - name: taskkill explorer.exe
-      run: taskkill /im explorer.exe
+      run: taskkill /im explorer.exe /F
     - name: start explorer.exe
       run: start explorer.exe
     - name: start taskmgr.exe
