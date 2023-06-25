@@ -20,6 +20,10 @@ jobs:
       run: Set-WinSystemLocale zh-cn
     - name: show seconds in system clock
       run: reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1
+    - name: taskkill explorer.exe
+      run: taskkill /im explorer.exe
+    - name: start explorer.exe
+      run: start explorer.exe
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 5
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Test12345678" -Force)
